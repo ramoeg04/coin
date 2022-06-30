@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+    <mat-toolbar>
+        <mat-card-title>{{coins.name}}</mat-card-title>
+        <span class="example-spacer"></span>
+        <div style="margin-top: 2em;">
+            <img mat-card-image [src]="coins.image.small">
+
+        </div>
+
+    </mat-toolbar>
+
+    <mat-card-subtitle>{{coins.id}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>{{coins.coingecko_score}}</p>
+        <p>{{coins.description.ar}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <p>{{coins.coingecko_score}}</p>
+        <p>{{coins.description.ar}}</p>
+    </mat-card-actions>
+</mat-card>
