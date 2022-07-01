@@ -1,10 +1,34 @@
+@import "../../../styles"
+
+mat-toolbar
+  background-color: $gray
+
 .long
-  // width: 30%
-    width: 22%
-    margin-left: 5%
-    margin-top: 4%
-    border-radius: 1em
-    background: transparent
+  width: $wh
+  height: $ht
+  margin: $margin
+  align-items: center
 
+.button
+  display: flex
+  flex-direction: column
+  align-items: center
 
+.example-spacer 
+  flex: 1 1 auto
+
+.color
+  background-color: $blue
+
+$layout-breakpoint-small: 700px
+$ht2:60%
+$wh2:50%
+$margin2: 0%
+
+@media (max-width: $layout-breakpoint-small)
+  .long
+   width: $wh2
+   height: $ht2
+   margin-top: $margin2
+   align-items: center
 

@@ -1,21 +1,24 @@
-<mat-card class="example-card">
-    <mat-toolbar>
-        <mat-card-title>{{coins.name}}</mat-card-title>
-        <span class="example-spacer"></span>
-        <div style="margin-top: 2em;">
-            <img mat-card-image [src]="coins.image.small">
-
-        </div>
-
-    </mat-toolbar>
-
-    <mat-card-subtitle>{{coins.id}}</mat-card-subtitle>
-    <mat-card-content>
-        <p>{{coins.coingecko_score}}</p>
-        <p>{{coins.description.ar}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <p>{{coins.coingecko_score}}</p>
-        <p>{{coins.description.ar}}</p>
-    </mat-card-actions>
-</mat-card>
+<div>
+    <mat-card class="example-card" *ngFor="let coins of coins">
+        <mat-toolbar>
+            <span class="example-spacer"></span>
+            <mat-card-title>{{coins.name}}</mat-card-title>
+            <span class="example-spacer"></span>
+            <div style="margin-top: 2em;">
+                <img mat-card-image [src]="coins.image.small">
+            </div>
+        </mat-toolbar>
+        <mat-card-subtitle>{{coins.id}}</mat-card-subtitle>
+        <mat-card-content>
+            <p><strong>Price</strong> {{coins.market_data.current_price.aed}}</p>
+            <p><strong>Ranck/Score</strong> {{coins.public_interest_stats.alexa_rank}}/{{coins.coingecko_score}}</p>
+            <p>{{coins.description.ar}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <p> <strong>More Info</strong></p>
+            <a [href]="coins.links.homepage[0]">Link 1</a>
+            <button class="color button" mat-raised-button color="primary" (click)="onNoClick()">Cerrar</button>
+        </mat-card-actions>
+        <p>{{coins.platforms.ethereum}}</p>
+    </mat-card>
+</div>

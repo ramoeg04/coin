@@ -1,18 +1,21 @@
-<mat-form-field appearance="standard">
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-</mat-form-field>
-<div class="row">
-    <mat-card class="long" *ngFor="let coin of coins |slice:0:20">
-        <mat-card-title>{{coin.name}}</mat-card-title>
-        <mat-card-subtitle>{{coin.id}}</mat-card-subtitle>
-        <!-- <mat-card-content>
-        <p>This card indeterminates progress bar.</p>
-        <p>aaa</p>
-    </mat-card-content> -->
-        <mat-card-actions>
-            <button mat-raised-button (click)="openDialog(coin.id)">Entrar</button>
-            <!-- <button mat-button>SHARE</button> -->
-        </mat-card-actions>
-    </mat-card>
-</div>
+
+
+<mat-toolbar>
+    <mat-form-field appearance="standard">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar ..." #input>
+    </mat-form-field>
+  </mat-toolbar>
+  
+
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let coin of coins |slice:0:10">
+        <mat-card class="long">
+            <mat-card-title>{{coin.name}}</mat-card-title>
+            <mat-card-subtitle>{{coin.id}}</mat-card-subtitle>
+            <mat-card-actions class="button">
+                <button class="color" mat-raised-button color="primary" (click)="openDialog(coin.id)">Entrar</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

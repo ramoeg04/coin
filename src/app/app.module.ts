@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   MatInputModule,
   MatButtonModule,
   MatDialogModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatGridListModule,
+  MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

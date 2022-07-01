@@ -8,15 +8,17 @@ import { CoinService } from '../../services/coin.service';
   styleUrls: ['./description.component.sass']
 })
 export class DescriptionComponent implements OnInit {
-public coins :any = ''
+public coins :any[] = []
   constructor(private coinServices: CoinService,public dialogRef: MatDialogRef<DescriptionComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
   ngOnInit(): void {
     this.coinServices.getCoinId(this.data.id).subscribe((r:any)=>{
-      this.coins = r;
-      console.log(this.coins)
+      this.coins[0] = r;
+      console.log(this.coins);
+    },err=>{
+      console.error(err);
     })
   }
 
