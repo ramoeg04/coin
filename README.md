@@ -1,3 +1,11 @@
+# Pasos a Seguir
+
+1- Clonar el proyecto
+2- Abrir visual Studio
+3- En el terminal escribir npm -i para que instale las dependecias
+4- En el terminal escribir ng serve -o para encender el servidor
+5- Ver aplicativo web
+
 # Coins
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
